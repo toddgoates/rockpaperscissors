@@ -1,28 +1,33 @@
 <template>
-  <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="container" id="app">
+    <h1 class="text-center">rock&bull;paper&bull;scissors</h1>
+    <hr>
+    <div class="row">
+      <gameplay></gameplay>
+      <score></score>
+      <history></history>
+    </div>
+    <modal></modal>
+    <hr>
+    <copyright></copyright>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Modal from './components/Modal.vue';
+import Gameplay from './components/Gameplay.vue';
+import Score from './components/Score.vue';
+import History from './components/History.vue';
+import Copyright from './components/Copyright.vue';
 
 export default {
   name: 'app',
   components: {
-    HelloWorld
+    Modal,
+    Gameplay,
+    Score,
+    History,
+    Copyright
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
