@@ -1,5 +1,5 @@
 <template>
-    <div class="modal fade" :class=" {show: showModal }" tabindex="-1" role="dialog">
+    <div class="modal fade" :class="{ show: showModal }" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -49,6 +49,6 @@ export default {
 
 <style>
     .show {
-        display: block;
+        display: block !important;
     }
 </style>

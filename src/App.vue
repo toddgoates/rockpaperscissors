@@ -14,11 +14,13 @@
 </template>
 
 <script>
-import Modal from './components/Modal.vue';
 import Gameplay from './components/Gameplay.vue';
 import Score from './components/Score.vue';
 import History from './components/History.vue';
+import Modal from './components/Modal.vue';
 import Copyright from './components/Copyright.vue';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'font-awesome/css/font-awesome.min.css';
 
 export default {
   name: 'app',
@@ -31,3 +33,9 @@ export default {
   }
 }
 </script>
+
+<style>
+  body {
+    background: #EAEAEA;
+  }
+</style>
