@@ -1,5 +1,5 @@
 <template>
-    <div class="col-sm-3">
+    <div class="col-lg-3">
         <div class="card" :class="{ scrollable: scrollable} ">
             <div class="card-body">
                 <h5 class="card-title">

@@ -21,6 +21,7 @@ import Modal from './components/Modal.vue';
 import Copyright from './components/Copyright.vue';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'font-awesome/css/font-awesome.min.css';
+import './main.css';
 
 export default {
   name: 'app',

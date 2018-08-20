@@ -1,5 +1,5 @@
 <template>
-    <div class="col-sm-5">
+    <div class="col-lg-5">
         <div class="card">
             <div class="card-body">
                 <div class="float-left text-primary">
@@ -17,7 +17,6 @@
                 </div>
             </div>
         </div>
-        <br>
         <div class="card" v-show="yourScore > 0 || compScore > 0">
             <div class="card-body">
                 <h3 class="card-title">
