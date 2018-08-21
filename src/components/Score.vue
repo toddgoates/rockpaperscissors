@@ -29,82 +29,84 @@
 </template>
 
 <script>
-import event from '../event.js';
-import Chart from 'chart.js';
+import event from "../event.js";
+import Chart from "chart.js";
 export default {
-    name: 'Score',
-    data() {
-        return {
-            yourScore: 0,
-            compScore: 0,
-            yourChoice: '',
-            compChoice: '',
-            outcome: ''
-        }
+  name: "Score",
+  data() {
+    return {
+      yourScore: 0,
+      compScore: 0,
+      yourChoice: "",
+      compChoice: "",
+      outcome: ""
+    };
+  },
+  methods: {
+    init() {
+      if (localStorage.getItem("yourScore")) {
+        this.yourScore = Number(localStorage.getItem("yourScore"));
+      }
+
+      if (localStorage.getItem("compScore")) {
+        this.compScore = Number(localStorage.getItem("compScore"));
+      }
+
+      this.drawChart();
     },
-    methods: {
-        init() {
-            if(localStorage.getItem('yourScore')) {
-                this.yourScore = Number(localStorage.getItem('yourScore'));
+    drawChart() {
+      if (this.yourScore > 0 || this.compScore > 0) {
+        let ctx = document.getElementById("piechart").getContext("2d");
+        let data = {
+          datasets: [
+            {
+              data: [this.yourScore, this.compScore],
+              backgroundColor: ["#007BFF", "#DC3545"]
             }
-
-            if(localStorage.getItem('compScore')) {
-                this.compScore = Number(localStorage.getItem('compScore'));
-            }
-
-            this.drawChart();
-        },
-        drawChart() {
-            if(this.yourScore > 0 || this.compScore > 0) {
-                let ctx = document.getElementById('piechart').getContext('2d');
-                let data = {
-                    datasets: [{
-                        data: [this.yourScore, this.compScore],
-                        backgroundColor: ['#007BFF', '#DC3545']
-                    }],
-                    labels: ['You', 'Computer']
-                };
-                new Chart(ctx, {
-                    type: 'pie',
-                    data: data,
-                    options: {}
-                });
-            }
-        }
-    },
-    mounted() {
-        this.init();
-
-        event.$on('your_choice', action => {
-            this.yourChoice = action;
+          ],
+          labels: ["You", "Computer"]
+        };
+        new Chart(ctx, {
+          type: "pie",
+          data: data,
+          options: {}
         });
-
-        event.$on('comp_choice', action => {
-            this.compChoice = action;
-        });
-
-        event.$on('game_results', result => {
-            if(result === 'You won!') {
-                this.yourScore += 1;
-            } else if(result === 'You lost!') {
-                this.compScore += 1;
-            }
-            this.outcome = result;
-            this.drawChart();
-        });
-
-        event.$on('save', () => {
-            localStorage.setItem('yourScore', this.yourScore);
-            localStorage.setItem('compScore', this.compScore);
-        });
-
-        event.$on('restart', () => {
-            this.yourScore = 0,
-            this.compScore = 0,
-            this.yourChoice = '',
-            this.compChoice = '',
-            this.outcome = ''
-        });
+      }
     }
-}
+  },
+  mounted() {
+    this.init();
+
+    event.$on("your_choice", action => {
+      this.yourChoice = action;
+    });
+
+    event.$on("comp_choice", action => {
+      this.compChoice = action;
+    });
+
+    event.$on("game_results", result => {
+      if (result === "You won!") {
+        this.yourScore += 1;
+      } else if (result === "You lost!") {
+        this.compScore += 1;
+      }
+      this.outcome = result;
+      this.drawChart();
+    });
+
+    event.$on("save", () => {
+      localStorage.setItem("yourScore", this.yourScore);
+      localStorage.setItem("compScore", this.compScore);
+    });
+
+    event.$on("restart", () => {
+      (this.yourScore = 0),
+        (this.compScore = 0),
+        (this.yourChoice = ""),
+        (this.compChoice = ""),
+        (this.outcome = "");
+    });
+  }
+};
 </script>

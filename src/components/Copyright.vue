@@ -11,11 +11,11 @@
 
 <script>
 export default {
-    name: 'Copyright',
-    data() {
-        return {
-            currentYear: new Date().getFullYear()
-        }
-    }
-}
+  name: "Copyright",
+  data() {
+    return {
+      currentYear: new Date().getFullYear()
+    };
+  }
+};
 </script>

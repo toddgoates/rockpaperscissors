@@ -14,17 +14,17 @@
 </template>
 
 <script>
-import Gameplay from './components/Gameplay.vue';
-import Score from './components/Score.vue';
-import History from './components/History.vue';
-import Modal from './components/Modal.vue';
-import Copyright from './components/Copyright.vue';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import 'font-awesome/css/font-awesome.min.css';
-import './main.css';
+import Gameplay from "./components/Gameplay.vue";
+import Score from "./components/Score.vue";
+import History from "./components/History.vue";
+import Modal from "./components/Modal.vue";
+import Copyright from "./components/Copyright.vue";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "font-awesome/css/font-awesome.min.css";
+import "./main.css";
 
 export default {
-  name: 'app',
+  name: "app",
   components: {
     Modal,
     Gameplay,
@@ -32,11 +32,11 @@ export default {
     History,
     Copyright
   }
-}
+};
 </script>
 
 <style>
-  body {
-    background: #EAEAEA;
-  }
+body {
+  background: #eaeaea;
+}
 </style>

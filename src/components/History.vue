@@ -22,62 +22,62 @@
 </template>
 
 <script>
-import event from '../event.js';
-import moment from 'moment';
+import event from "../event.js";
+import moment from "moment";
 export default {
-    name: 'History',
-    data() {
-        return {
-            history: [],
-            scrollable: false
-        }
+  name: "History",
+  data() {
+    return {
+      history: [],
+      scrollable: false
+    };
+  },
+  methods: {
+    init() {
+      if (localStorage.getItem("history")) {
+        this.history = JSON.parse(localStorage.getItem("history"));
+      }
+
+      this.addScrollableClass();
     },
-    methods: {
-        init() {
-            if(localStorage.getItem('history')) {
-                this.history = JSON.parse(localStorage.getItem('history'));
-            }
-
-            this.addScrollableClass();
-        },
-        clearHistory() {
-            this.history = [];
-            this.scrollable = false;
-        },
-        addScrollableClass() {
-            if(this.history.length > 16) {
-                this.scrollable = true;
-            }
-        }
+    clearHistory() {
+      this.history = [];
+      this.scrollable = false;
     },
-    mounted() {
-        this.init();
-
-        event.$on('game_results', result => {
-            let history = {
-                outcome: result,
-                timestamp: moment().format('h:mm:ss a')
-            };
-
-            this.history.unshift(history);
-
-            this.addScrollableClass();
-        });
-
-        event.$on('save', () => {
-            localStorage.setItem('history', JSON.stringify(this.history));
-        });
-
-        event.$on('restart', () => {
-            this.clearHistory();
-        });
+    addScrollableClass() {
+      if (this.history.length > 16) {
+        this.scrollable = true;
+      }
     }
-}
+  },
+  mounted() {
+    this.init();
+
+    event.$on("game_results", result => {
+      let history = {
+        outcome: result,
+        timestamp: moment().format("h:mm:ss a")
+      };
+
+      this.history.unshift(history);
+
+      this.addScrollableClass();
+    });
+
+    event.$on("save", () => {
+      localStorage.setItem("history", JSON.stringify(this.history));
+    });
+
+    event.$on("restart", () => {
+      this.clearHistory();
+    });
+  }
+};
 </script>
 
 <style>
-    .scrollable {
-        max-height: 30.9rem;
-        overflow-y: scroll;
-    }
+.scrollable {
+  max-height: 30.9rem;
+  overflow-y: scroll;
+}
 </style>

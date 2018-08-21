@@ -21,34 +21,34 @@
 </template>
 
 <script>
-import event from '../event.js';
+import event from "../event.js";
 export default {
-    name: 'Modal',
-    data() {
-        return {
-            showModal: false
-        }
+  name: "Modal",
+  data() {
+    return {
+      showModal: false
+    };
+  },
+  methods: {
+    closeModal() {
+      this.showModal = false;
     },
-    methods: {
-        closeModal() {
-            this.showModal = false;
-        },
-        confirmRestart() {
-            event.$emit('restart');
-            localStorage.clear();
-            this.closeModal();
-        }
-    },
-    mounted() {
-        event.$on('show_modal', () => {
-            this.showModal = true;
-        })
+    confirmRestart() {
+      event.$emit("restart");
+      localStorage.clear();
+      this.closeModal();
     }
-}
+  },
+  mounted() {
+    event.$on("show_modal", () => {
+      this.showModal = true;
+    });
+  }
+};
 </script>
 
 <style>
-    .show {
-        display: block !important;
-    }
+.show {
+  display: block !important;
+}
 </style>
