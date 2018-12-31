@@ -1,5 +1,7 @@
 # rock&bull;paper&bull;scissors
 
+[![CodeFactor](https://www.codefactor.io/repository/github/toddgoates/rockpaperscissors/badge)](https://www.codefactor.io/repository/github/toddgoates/rockpaperscissors)
+
 A fun little project to learn more about the following technologies:
 
 - Vue.js
