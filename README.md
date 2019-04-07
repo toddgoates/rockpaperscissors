@@ -2,6 +2,8 @@
 
 [![CodeFactor](https://www.codefactor.io/repository/github/toddgoates/rockpaperscissors/badge)](https://www.codefactor.io/repository/github/toddgoates/rockpaperscissors)
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/759273da-3cb7-45be-986c-04ac91883c98/deploy-status)](https://app.netlify.com/sites/rps-toddgoates/deploys)
+
 A fun little project to learn more about the following technologies:
 
 - Vue.js
