@@ -1,33 +1,33 @@
 <template>
-    <div class="col-lg-4">
-        <div class="card">
-            <div class="card-body text-center">
-                <div class="btn-group">
-                    <button class="btn btn-sm btn-secondary" @click="play('rock')">
-                        <i class="fa fa-fw fa-hand-rock-o"></i> rock
-                    </button>
-                    <button class="btn btn-sm btn-warning" @click="play('paper')">
-                        <i class="fa fa-fw fa-hand-paper-o"></i> paper
-                    </button>
-                    <button class="btn btn-sm btn-danger" @click="play('scissors')">
-                        <i class="fa fa-fw fa-hand-scissors-o"></i> scissors
-                    </button>
-                </div>
-            </div>
-            <div class="card-footer">
-                <button class="btn btn-default float-left"
-                        @click="save"
-                        title="This will save your game progress">
-                    Save
-                </button>
-                <button class="btn btn-default float-right"
-                        @click="restart"
-                        title="This will start your game over. All saved scores and history will be deleted">
-                    Restart
-                </button>
-            </div>
+  <div class="col-lg-4">
+    <div class="card">
+      <div class="card-body text-center">
+        <div class="btn-group">
+          <button class="btn btn-sm btn-secondary" @click="play('rock')">
+            <i class="fa fa-fw fa-hand-rock-o"></i> rock
+          </button>
+          <button class="btn btn-sm btn-warning" @click="play('paper')">
+            <i class="fa fa-fw fa-hand-paper-o"></i> paper
+          </button>
+          <button class="btn btn-sm btn-danger" @click="play('scissors')">
+            <i class="fa fa-fw fa-hand-scissors-o"></i> scissors
+          </button>
         </div>
+      </div>
+      <div class="card-footer">
+        <button
+          class="btn btn-default float-left"
+          @click="save"
+          title="This will save your game progress"
+        >Save</button>
+        <button
+          class="btn btn-default float-right"
+          @click="restart"
+          title="This will start your game over. All saved scores and history will be deleted"
+        >Restart</button>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>

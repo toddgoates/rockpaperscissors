@@ -1,24 +1,24 @@
 <template>
-    <div class="col-lg-3">
-        <div class="card" :class="{ scrollable: scrollable} ">
-            <div class="card-body">
-                <h5 class="card-title">
-                    <i class="fa fa-fw fa-book"></i> History
-                    <button class="btn btn-default" 
-                            @click="clearHistory" 
-                            title="This will delete all game history, but keep your scores.">
-                        Clear
-                    </button>
-                </h5>
-                <ul class="list-unstyled">
-                    <li v-for="(hist, index) in history" :key="index">
-                        {{ hist.outcome }} 
-                        <small class="text-muted">({{ hist.timestamp }})</small>
-                    </li>
-                </ul>
-            </div>
-        </div>
+  <div class="col-lg-3">
+    <div class="card" :class="{ scrollable: scrollable} ">
+      <div class="card-body">
+        <h5 class="card-title">
+          <i class="fa fa-fw fa-book"></i> History
+          <button
+            class="btn btn-default"
+            @click="clearHistory"
+            title="This will delete all game history, but keep your scores."
+          >Clear</button>
+        </h5>
+        <ul class="list-unstyled">
+          <li v-for="(hist, index) in history" :key="index">
+            {{ hist.outcome }}
+            <small class="text-muted">({{ hist.timestamp }})</small>
+          </li>
+        </ul>
+      </div>
     </div>
+  </div>
 </template>
 
 <script>

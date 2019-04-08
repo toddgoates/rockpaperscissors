@@ -1,31 +1,31 @@
 <template>
-    <div class="col-lg-5">
-        <div class="card">
-            <div class="card-body">
-                <div class="float-left text-primary">
-                    <p>You: {{ yourScore }}</p>
-                    <p>{{ yourChoice }}</p>
-                </div>
-                <div class="float-right text-right text-danger">
-                    <p>Computer: {{ compScore }}</p>
-                    <p>{{ compChoice }}</p>
-                </div>
-                <div class="clearfix"></div>
-                <hr>
-                <div class="text-center">
-                    <strong>{{ outcome }}</strong>
-                </div>
-            </div>
+  <div class="col-lg-5">
+    <div class="card">
+      <div class="card-body">
+        <div class="float-left text-primary">
+          <p>You: {{ yourScore }}</p>
+          <p>{{ yourChoice }}</p>
         </div>
-        <div class="card" v-show="yourScore > 0 || compScore > 0">
-            <div class="card-body">
-                <h3 class="card-title">
-                    <i class="fa fa-fw fa-trophy"></i> Wins
-                </h3>
-                <canvas id="piechart"></canvas>
-            </div>
+        <div class="float-right text-right text-danger">
+          <p>Computer: {{ compScore }}</p>
+          <p>{{ compChoice }}</p>
         </div>
+        <div class="clearfix"></div>
+        <hr>
+        <div class="text-center">
+          <strong>{{ outcome }}</strong>
+        </div>
+      </div>
     </div>
+    <div class="card" v-show="yourScore > 0 || compScore > 0">
+      <div class="card-body">
+        <h3 class="card-title">
+          <i class="fa fa-fw fa-trophy"></i> Wins
+        </h3>
+        <canvas id="piechart"></canvas>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script>

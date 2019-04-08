@@ -1,12 +1,16 @@
 <template>
-    <footer class="text-center">
-        <p>
-            <small>
-                &copy; {{ currentYear }} &bull; 
-                <a href="https://toddgoates.com" target="_blank" class="text-secondary">Todd Goates</a>
-            </small>
-        </p>
-    </footer>
+  <footer class="text-center">
+    <p>
+      <small>
+        &copy; {{ currentYear }} &bull;
+        <a
+          href="https://toddgoates.com"
+          target="_blank"
+          class="text-secondary"
+        >Todd Goates</a>
+      </small>
+    </p>
+  </footer>
 </template>
 
 <script>
